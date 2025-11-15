@@ -22,7 +22,7 @@ export default function ChatPage() {
     setMessage("");
     setLoading(true);
 
-    const res = await fetch("http://127.0.0.1:8000/chat", {
+    const res = await fetch("https://vercel.com/ahmed-maliks-projects-3b2073df/backend-portfolio", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ message }),
