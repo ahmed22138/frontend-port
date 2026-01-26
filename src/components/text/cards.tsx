@@ -64,6 +64,7 @@ export default function ProjectsCarousel() {
                   src={img.src}
                   alt={img.alt}
                   className="w-full h-64 md:h-80 object-cover"
+                  
                 />
                 <div className="p-4 text-center bg-white/60 dark:bg-black/40">
                   <h3 className="text-lg font-semibold">{img.title}</h3>
