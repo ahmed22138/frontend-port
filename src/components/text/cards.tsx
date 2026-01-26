@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 
 const images = [
   { src: "/1 (1).png", alt: "Slide 1", title: "Project 1 Resume Builder" },
-  { src: "/1 (3).png", alt: "https://hackathon-3-sandy-ten.vercel.app/", title: "Project 2 E-commerce website", href:"https://hackathon-3-sandy-ten.vercel.app/" },
+  { src: "/1 (3).png", alt: "slide 2", title: "Project 2 E-commerce website", },
   { src: "/1 (4).png", alt: "Slide 3", title: "Project 3 builder construction website" },
   { src: "/1 (2).png", alt: "Slide 4", title: "Project 4 mini-protfolio website" },
 ];
