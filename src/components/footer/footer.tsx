@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { Facebook, Instagram, Linkedin } from "lucide-react";
+import { Facebook, Instagram, Linkedin, Github } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -19,7 +19,7 @@ export default function Footer() {
             target="_blank"
             className="hover:opacity-70 transition-opacity"
           >
-            <Facebook className="w-6 h-6" />
+            <Github className="w-6 h-6" />
           </Link>
 
           <Link
@@ -31,7 +31,7 @@ export default function Footer() {
           </Link>
 
           <Link
-            href="https://linkedin.com"
+            href="https://www.linkedin.com/in/ahmed-malik-a588002b4/"
             target="_blank"
             className="hover:opacity-70 transition-opacity"
           >
