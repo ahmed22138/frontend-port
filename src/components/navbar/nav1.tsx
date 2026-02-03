@@ -32,6 +32,9 @@ const BlurNavbar = () => {
           <Link href="/faq" className="hover:text-blue-600 dark:hover:text-gray-300 transition">
             Team
           </Link>
+          <Link href="/content-blog" className="hover:text-blue-600 dark:hover:text-gray-300 transition">
+            Blog
+          </Link>
           <Link href="/about" className="hover:text-blue-600 dark:hover:text-gray-300 transition">
             About
           </Link>
@@ -95,6 +98,9 @@ const BlurNavbar = () => {
         >
           <Link href="/" className="hover:text-blue-600 dark:hover:text-gray-300 transition">Home</Link>
           <Link href="/faq" className="hover:text-blue-600 dark:hover:text-gray-300 transition">Team</Link>
+          <Link href="/content-blog" className="hover:text-blue-600 dark:hover:text-gray-300 transition">
+            Blog
+          </Link>
           <Link href="/about" className="hover:text-blue-600 dark:hover:text-gray-300 transition">About</Link>
           <Link href="/contact" className="hover:text-blue-600 dark:hover:text-gray-300 transition">Contact</Link>
           <div className="flex space-x-3 pt-4">

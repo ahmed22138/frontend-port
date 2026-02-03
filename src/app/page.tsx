@@ -7,6 +7,7 @@ import Contact from "./contact/page";
 import FAQ from "./faq/page";
 import Footer from "@/components/footer/footer";
 import BlurNavbar from "@/components/navbar/nav1";
+import ContentBlog from "./content-blog/page";
 
 
 
@@ -27,6 +28,9 @@ export  default function HomePage() {
               
         <div>
        <ProjectsCarousel/>
+        </div>
+          <div>
+          <ContentBlog/>
         </div>
         <div>
           <Contact/>
