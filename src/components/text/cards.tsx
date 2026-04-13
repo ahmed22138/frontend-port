@@ -1,254 +1,112 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useState, useEffect } from "react";
+import { Github, ExternalLink } from "lucide-react";
 
-const images = [
+const projects = [
   {
     src: "/1 (1).png",
-    alt: "Slide 1",
-    title: "Project 1 Resume Builder",
-    link: "https://hackathon-3-sandy-ten.vercel.app",
+    alt: "Resume Builder",
+    title: "Resume Builder",
+    description: "A web app that lets users create professional resumes with live preview and PDF export.",
+    tech: ["Next.js", "TypeScript", "Tailwind CSS"],
+    github: "https://github.com/ahmed22138",
+    live: "https://resume-builder-eta-green.vercel.app/",
   },
   {
     src: "/1 (3).png",
-    alt: "slide 2",
-    title: "Project 2 E-commerce website",
-    link: "https://resume-builder-eta-green.vercel.app/",
+    alt: "E-commerce Website",
+    title: "E-commerce Website",
+    description: "A fully responsive online store with product listings, cart, and checkout flow.",
+    tech: ["Next.js", "Tailwind CSS", "Sanity CMS"],
+    github: "https://github.com/ahmed22138",
+    live: "https://hackathon-3-sandy-ten.vercel.app",
   },
   {
     src: "/1 (4).png",
-    alt: "Slide 3",
-    title: "Project 3 builder construction website",
-    link: "https://figma-project-opal.vercel.app/",
+    alt: "Construction Website",
+    title: "Construction Company Website",
+    description: "A professional landing page for a construction business with service showcase and contact form.",
+    tech: ["Next.js", "Tailwind CSS", "Framer Motion"],
+    github: "https://github.com/ahmed22138",
+    live: "https://figma-project-opal.vercel.app/",
   },
   {
     src: "/1 (2).png",
-    alt: "Slide 4",
-    title: "Project 4 mini-protfolio website",
-    link: "https://hackathon-3-sandy-ten.vercel.app",
+    alt: "Mini Portfolio",
+    title: "Mini Portfolio Website",
+    description: "A clean, minimal personal portfolio with dark mode and animated sections.",
+    tech: ["React", "Tailwind CSS", "GSAP"],
+    github: "https://github.com/ahmed22138",
+    live: "https://hackathon-3-sandy-ten.vercel.app",
   },
 ];
 
 export default function ProjectsCarousel() {
-  const [index, setIndex] = useState(0);
-
-  useEffect(() => {
-    const id = setInterval(
-      () => setIndex((i) => (i + 1) % images.length),
-      4000
-    );
-    return () => clearInterval(id);
-  }, []);
-
-  function prev() {
-    setIndex((i) => (i - 1 + images.length) % images.length);
-  }
-  function next() {
-    setIndex((i) => (i + 1) % images.length);
-  }
-  function goTo(i: number) {
-    setIndex(i);
-  }
-
   return (
-    <section className="py-10 mt-20">
+    <section id="projects" className="py-10 mt-20 px-4">
       <motion.h1
         initial={{ opacity: 0, y: -50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.2 }}
         viewport={{ once: true }}
-        className="flex justify-center text-3xl md:text-4xl font-serif font-semibold mb-10"
+        className="flex justify-center text-3xl md:text-4xl font-serif font-semibold mb-12 text-black dark:text-white"
       >
-        <span className="text-black dark:text-white">My Projects</span>
+        My Projects
       </motion.h1>
 
-      <motion.div
-        initial={{ opacity: 0, scale: 0.88, y: 40 }}
-        whileInView={{ opacity: 1, scale: 1, y: 0 }}
-        transition={{ duration: 0.9, ease: "easeOut" }}
-        viewport={{ once: false, amount: 0.3 }}
-        className="max-w-4xl mx-auto relative"
-      >
-        <div className="overflow-hidden rounded-xl">
-          <div
-            className="flex transition-transform duration-500"
-            style={{ transform: `translateX(-${index * 100}%)` }}
+      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+        {projects.map((project, i) => (
+          <motion.div
+            key={i}
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: i * 0.1 }}
+            viewport={{ once: true, amount: 0.2 }}
+            className="bg-white dark:bg-neutral-900 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-100 dark:border-neutral-800"
           >
-            {images.map((img, i) => (
-              <div key={i} className="w-full flex-shrink-0">
-                {/* ONLY CHANGE IS HERE */}
+            <div className="overflow-hidden">
+              <img
+                src={project.src}
+                alt={project.alt}
+                className="w-full h-52 object-cover hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+
+            <div className="p-5">
+              <h3 className="text-xl font-bold text-black dark:text-white mb-2">{project.title}</h3>
+              <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed mb-4">{project.description}</p>
+
+              <div className="flex flex-wrap gap-2 mb-4">
+                {project.tech.map((t) => (
+                  <span key={t} className="text-xs px-2 py-1 bg-indigo-100 dark:bg-indigo-900/40 text-indigo-700 dark:text-indigo-300 rounded-full font-medium">
+                    {t}
+                  </span>
+                ))}
+              </div>
+
+              <div className="flex gap-3">
                 <a
-                  href={img.link}
+                  href={project.github}
                   target="_blank"
                   rel="noopener noreferrer"
+                  className="flex items-center gap-1.5 text-sm font-medium px-4 py-2 bg-gray-900 dark:bg-white text-white dark:text-black rounded-lg hover:opacity-80 transition"
                 >
-                  <img
-                    src={img.src}
-                    alt={img.alt}
-                    className="w-full h-64 md:h-80 object-cover cursor-pointer"
-                  />
+                  <Github size={15} /> GitHub
                 </a>
-
-                <div className="p-4 text-center bg-white/60 dark:bg-black/40">
-                  <h3 className="text-lg font-semibold">{img.title}</h3>
-                </div>
+                <a
+                  href={project.live}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1.5 text-sm font-medium px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition"
+                >
+                  <ExternalLink size={15} /> Live Demo
+                </a>
               </div>
-            ))}
-          </div>
-        </div>
-
-        <button
-          onClick={prev}
-          aria-label="Previous"
-          className="absolute left-3 top-1/2 -translate-y-1/2 bg-white/90 dark:bg-gray-800 p-2 rounded-full shadow hover:scale-105 transition"
-        >
-          <span className="text-2xl font-bold text-indigo-600">‹</span>
-        </button>
-
-        <button
-          onClick={next}
-          aria-label="Next"
-          className="absolute right-3 top-1/2 -translate-y-1/2 bg-white/90 dark:bg-gray-800 p-2 rounded-full shadow hover:scale-105 transition"
-        >
-          <span className="text-2xl font-bold text-indigo-600">›</span>
-        </button>
-
-        <div className="flex justify-center gap-3 mt-4">
-          {images.map((_, i) => (
-            <button
-              key={i}
-              onClick={() => goTo(i)}
-              aria-label={`Go to slide ${i + 1}`}
-              className={`w-3 h-3 rounded-full ${
-                i === index ? "bg-indigo-600" : "bg-gray-300"
-              } transition`}
-            />
-          ))}
-        </div>
-      </motion.div>
+            </div>
+          </motion.div>
+        ))}
+      </div>
     </section>
   );
 }
-
-
-
-
-
-
-
-
-
-
-
-
-// "use client";
-
-// import { motion } from "framer-motion";
-// import { useState, useEffect } from "react";
-
-// const images = [
-//   { src: "/1 (1).png", alt: "Slide 1", title: "Project 1 Resume Builder" },
-//   { src: "/1 (3).png", alt: "slide 2", title: "Project 2 E-commerce website", },
-//   { src: "/1 (4).png", alt: "Slide 3", title: "Project 3 builder construction website" },
-//   { src: "/1 (2).png", alt: "Slide 4", title: "Project 4 mini-protfolio website" },
-// ];
-
-// export default function ProjectsCarousel() {
-//   const [index, setIndex] = useState(0);
-
-//   useEffect(() => {
-//     // Optional: autoplay
-//     const id = setInterval(() => setIndex((i) => (i + 1) % images.length), 4000);
-//     return () => clearInterval(id);
-//   }, []);
-
-//   function prev() {
-//     setIndex((i) => (i - 1 + images.length) % images.length);
-//   }
-//   function next() {
-//     setIndex((i) => (i + 1) % images.length);
-//   }
-//   function goTo(i: number) {
-//     setIndex(i);
-//   }
-
-//   return (
-//      <section className="py-10 mt-20">
-
-//         <motion.h1
-//         initial={{ opacity: 0, y: -50 }}
-//         whileInView={{ opacity: 1, y: 0 }}
-//         transition={{ duration: 0.8, delay: 0.2 }}
-//         viewport={{ once: true }}
-//         className="flex justify-center text-3xl md:text-4xl font-serif font-semibold mb-10"
-//       >
-//         <span className="text-black dark:text-white">
-//             My Projects
-//         </span>
-//       </motion.h1>
-
-//       {/* ANIMATED CAROUSEL WRAPPER */}
-//       <motion.div
-//         initial={{ opacity: 0, scale: 0.88,  y:40 }}
-//         whileInView={{ opacity: 1, scale: 1, y:0 }}
-//         transition={{ duration: 0.9, ease: "easeOut" }}
-//         viewport={{ once:false,  amount: 0.3 }}
-//         className="max-w-4xl mx-auto relative"
-//       >
-//         {/* Slider window */}
-//         <div className="overflow-hidden rounded-xl">
-//           <div
-//             className="flex transition-transform duration-500"
-//             style={{ transform: `translateX(-${index * 100}%)` }}
-//           >
-//             {images.map((img, i) => (
-//               <div key={i} className="w-full flex-shrink-0">
-//                 <img
-//                   src={img.src}
-//                   alt={img.alt}
-//                   className="w-full h-64 md:h-80 object-cover"
-                  
-//                 />
-//                 <div className="p-4 text-center bg-white/60 dark:bg-black/40">
-//                   <h3 className="text-lg font-semibold">{img.title}</h3>
-//                 </div>
-//               </div>
-//             ))}
-//           </div>
-//         </div>
-
-//         {/* Prev / Next Buttons */}
-//         <button
-//           onClick={prev}
-//           aria-label="Previous"
-//           className="absolute left-3 top-1/2 -translate-y-1/2 bg-white/90 dark:bg-gray-800 p-2 rounded-full shadow hover:scale-105 transition"
-//         >
-//           <span className="text-2xl font-bold text-indigo-600">‹</span>
-//         </button>
-
-//         <button
-//           onClick={next}
-//           aria-label="Next"
-//           className="absolute right-3 top-1/2 -translate-y-1/2 bg-white/90 dark:bg-gray-800 p-2 rounded-full shadow hover:scale-105 transition"
-//         >
-//           <span className="text-2xl font-bold text-indigo-600">›</span>
-//         </button>
-
-//         {/* Dots */}
-//         <div className="flex justify-center gap-3 mt-4">
-//           {images.map((_, i) => (
-//             <button
-//               key={i}
-//               onClick={() => goTo(i)}
-//               aria-label={`Go to slide ${i + 1}`}
-//               className={`w-3 h-3 rounded-full ${
-//                 i === index ? "bg-indigo-600" : "bg-gray-300"
-//               } transition`}
-//             />
-//           ))}
-//         </div>
-//       </motion.div>
-//     </section>
-//   );
-// }

@@ -2,20 +2,21 @@ import React from "react";
 import { AuroraText } from "@/components/ui/aurora-text";
 import { TextAnimate } from "@/components/ui/text-animate";
 import { AnimatedShinyText } from "@/components/ui/animated-shiny-text";
+import { Github, Linkedin, Download } from "lucide-react";
 
  function Hero() {
   return (
     <div
       className="
-        flex flex-col items-center justify-center text-center mt-48   mb-20 delay-10
-        bg-white text-black 
+        flex flex-col items-center justify-center text-center mt-48 mb-20
+        bg-white text-black
         dark:bg-[#0A0A0A] dark:text-white
-        transition-colors duration-50
+        transition-colors duration-300
       "
     >
       <h1 className="text-6xl font-sans">
-        <AnimatedShinyText>Hello I'm</AnimatedShinyText>{" "}
-        <AuroraText>Ahmed..</AuroraText>
+        <AnimatedShinyText>Hello I’m</AnimatedShinyText>{" "}
+        <AuroraText>Ahmed Zahid</AuroraText>
       </h1>
 
       <br />
@@ -23,7 +24,7 @@ import { AnimatedShinyText } from "@/components/ui/animated-shiny-text";
       <div className="text-center">
         <p className="text-base sm:text-lg md:text-xl font-sans leading-relaxed max-w-2xl mx-auto px-4">
           <TextAnimate animation="blurInUp" by="character" once>
-            I’m a passionate Web Developer crafting creative digital experiences
+            I’m a passionate Frontend Developer crafting creative digital experiences
           </TextAnimate>
 
           <TextAnimate animation="blurInUp" by="character" once delay={0.5}>
@@ -42,44 +43,46 @@ import { AnimatedShinyText } from "@/components/ui/animated-shiny-text";
 
       <br />
 
-   
-      <div className=" flex flex-col items-center justify-center text-center mb-20 delay-10
-    bg-black text-black 
-    dark:bg-[#0A0A0A] dark:text-white
-    transition-colors duration-50">
-        <button className="relative inline-flex items-center justify-center px-8 py-2.5 overflow-hidden tracking-tighter bg-blend-color text-white rounded-md group">
-          <span className="absolute w-0 h-0 transition-all duration-500 ease-out bg-blue-700 rounded-full group-hover:w-56 group-hover:h-56" />
-          <span className="absolute bottom-0 left-0 h-full -ml-2">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="w-auto h-full opacity-100 object-stretch"
-              viewBox="0 0 487 487"
-            >
-              <path
-                fillOpacity=".1"
-                fillRule="nonzero"
-                fill="#FFF"
-                d="M0 .3c67 2.1 134.1 4.3 186.3 37 52.2 32.7 89.6 95.8 112.8 150.6 23.2 54.8 32.3 101.4 61.2 149.9 28.9 48.4 77.7 98.8 126.4 149.2H0V.3z"
-              />
-            </svg>
-          </span>
-          <span className="absolute top-0 right-0 w-12 h-full -mr-3">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="object-cover w-full h-full"
-              viewBox="0 0 487 487"
-            >
-              <path
-                fillOpacity=".1"
-                fillRule="nonzero"
-                fill="#FFF"
-                d="M487 486.7c-66.1-3.6-132.3-7.3-186.3-37s-95.9-85.3-126.2-137.2c-30.4-51.8-49.3-99.9-76.5-151.4C70.9 109.6 35.6 54.8.3 0H487v486.7z"
-              />
-            </svg>
-          </span>
-          <span className="absolute inset-0 w-full h-full -mt-1 rounded-lg opacity-30 bg-gradient-to-b from-transparent via-transparent to-gray-200" />
-          <span className="relative text-base font-semibold">Click Me !</span>
-        </button>
+      <div className="flex flex-wrap items-center justify-center gap-4 mt-4 mb-20">
+        <a
+          href="#projects"
+          onClick={(e) => {
+            e.preventDefault();
+            document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" });
+          }}
+          className="px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold rounded-xl shadow-md transition-all duration-300 hover:scale-105"
+        >
+          View Projects
+        </a>
+
+        <a
+          href="/resume.pdf"
+          download
+          className="flex items-center gap-2 px-6 py-3 border-2 border-indigo-600 text-indigo-600 dark:text-indigo-400 dark:border-indigo-400 font-semibold rounded-xl hover:bg-indigo-50 dark:hover:bg-indigo-900/20 transition-all duration-300 hover:scale-105"
+        >
+          <Download size={18} />
+          Download CV
+        </a>
+
+        <a
+          href="https://github.com/ahmed22138"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-2 px-5 py-3 bg-gray-900 dark:bg-white text-white dark:text-black font-semibold rounded-xl hover:opacity-80 transition-all duration-300 hover:scale-105"
+        >
+          <Github size={18} />
+          GitHub
+        </a>
+
+        <a
+          href="https://linkedin.com/in/ahmed-zahid"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-2 px-5 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-xl transition-all duration-300 hover:scale-105"
+        >
+          <Linkedin size={18} />
+          LinkedIn
+        </a>
       </div>
     </div>
   );

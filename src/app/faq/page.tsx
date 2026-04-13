@@ -12,24 +12,29 @@ type FAQItem = {
 
 const faqs: FAQItem[] = [
   {
-    question: "How do I deploy my app to production?",
+    question: "Are you available for freelance or full-time work?",
     answer:
-      "Use platforms like Vercel or Netlify and run production build (`npm run build`)."
+      "Yes! I'm currently open to both freelance projects and full-time opportunities. Feel free to reach out via the contact section or email me directly at ahmedzahid1149@gmail.com."
   },
   {
-    question: "Can I use a custom domain with my project?",
+    question: "What technologies do you specialize in?",
     answer:
-      "Yes, you can connect your own domain easily from DNS settings on hosting platforms."
+      "I specialize in Next.js, TypeScript, Tailwind CSS, and Framer Motion on the frontend. On the backend I work with Python and FastAPI, and I integrate AI features using Google Gemini and OpenAI APIs."
   },
   {
-    question: "How do I manage API keys securely?",
+    question: "Can you build full-stack applications?",
     answer:
-      "Never expose keys on frontend. Use environment variables and server-side APIs."
+      "Absolutely. I build complete web applications — from responsive UI with animations to REST APIs, AI chatbots, and database integrations."
   },
   {
-    question: "Do you offer technical support?",
+    question: "How long does it take to complete a project?",
     answer:
-      "Yes, we provide documentation, community help, and priority support for Pro users."
+      "It depends on the scope. A landing page or portfolio typically takes 3–5 days. A full-stack web app can take 2–4 weeks. I always discuss timelines upfront before starting."
+  },
+  {
+    question: "How can I contact you?",
+    answer:
+      "You can reach me via the Contact section on this page, email me at ahmedzahid1149@gmail.com, or connect with me on LinkedIn and GitHub."
   }
 ];
 

@@ -38,37 +38,42 @@ export default function AboutSection() {
         </h2>
 
        <p className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed mb-4">
-  Hi 👋, I'm <span className="font-semibold text-indigo-500">Ahmed Zahid</span>. 
-  I’m a passionate <span className="text-purple-500 font-medium">Frontend Developer</span> who loves crafting 
-  visually appealing and high-performance digital experiences. I specialize in
-  <span className="text-indigo-500 font-medium"> Next.js</span>, 
-  <span className="text-purple-500 font-medium"> TypeScript</span>, 
-  and <span className="text-indigo-500 font-medium">Tailwind CSS</span>
-  to build modern, responsive user interfaces with smooth animations.
+  Hi 👋, I’m <span className="font-semibold text-indigo-500">Ahmed Zahid</span> — a passionate{" "}
+  <span className="text-purple-500 font-medium">Frontend Developer</span> specializing in{" "}
+  <span className="text-indigo-500 font-medium">Next.js</span>,{" "}
+  <span className="text-purple-500 font-medium">TypeScript</span>, and{" "}
+  <span className="text-indigo-500 font-medium">Tailwind CSS</span>. I build modern, responsive
+  interfaces with smooth animations and clean code.
 </p>
 
-<p className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed">
-  I also work with <span className="text-purple-500 font-medium">Sanity CMS</span>, 
-  <span className="text-indigo-500 font-medium">Python</span>, 
-  and the <span className="text-purple-500 font-medium">OpenAI Agent SDK</span> 
-  to integrate smart AI-powered features such as chatbots and automation tools. 
-  My focus is clean code, great performance, and seamless user interaction.
-  I keep learning everyday and love turning creative ideas into powerful products 🚀✨
+<p className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed mb-6">
+  I also integrate AI-powered features using{" "}
+  <span className="text-purple-500 font-medium">Python</span>,{" "}
+  <span className="text-indigo-500 font-medium">FastAPI</span>, and the{" "}
+  <span className="text-purple-500 font-medium">Google Gemini API</span> — turning creative ideas
+  into powerful products. I’m always learning and love pushing the limits of what the web can do 🚀
 </p>
 
-        <p className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed">
-          My goal is to create smooth user experiences with elegant UI animations,
-          efficient code, and clean design. I'm always exploring new technologies and pushing my limits
-          to bring innovative ideas to life.
-        </p>
+        <div className="flex flex-wrap gap-3 mt-2 mb-6">
+          {["Next.js", "TypeScript", "Tailwind CSS", "Python", "FastAPI", "Gemini AI", "GSAP", "Framer Motion"].map((skill) => (
+            <span key={skill} className="px-3 py-1 text-sm font-medium bg-indigo-100 dark:bg-indigo-900/40 text-indigo-700 dark:text-indigo-300 rounded-full">
+              {skill}
+            </span>
+          ))}
+        </div>
 
-        <motion.button
+        <motion.a
+          href="#projects"
+          onClick={(e) => {
+            e.preventDefault();
+            document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" });
+          }}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          className="mt-6 px-6 py-3 bg-gradient-to-r from-indigo-500 to-purple-600 text-white font-semibold rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
+          className="inline-block mt-2 px-6 py-3 bg-gradient-to-r from-indigo-500 to-purple-600 text-white font-semibold rounded-xl shadow-md hover:shadow-lg transition-all duration-300 cursor-pointer"
         >
           View My Work 🚀
-        </motion.button>
+        </motion.a>
       </motion.div>
     </section>
     </div>

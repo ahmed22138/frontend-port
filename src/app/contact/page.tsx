@@ -2,7 +2,7 @@
 
 import BlurNavbar from "@/components/navbar/nav1";
 import { motion } from "framer-motion";
-import { FaFacebook,FaTwitter,FaLinkedin,} from "react-icons/fa";
+import { FaFacebook,FaTwitter,FaLinkedin, FaGithub} from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 
 
@@ -22,7 +22,7 @@ export default function Contact() {
        
         <div>
           <h2 className="text-slate-900 dark:text-white text-3xl font-bold">
-           Contact us
+           Contact Me
           </h2>
           <p className="text-[15px] text-slate-600 dark:text-gray-300 mt-4 leading-relaxed">
             Have some big idea or brand to develop and need help? Then reach out we'd
@@ -38,7 +38,7 @@ export default function Contact() {
                   {/* Mail icon same rakhna */}
                   <MdEmail />
                 </div>
-                <a href="https://mail.google.com/mail/u/1/#inbox" className="text-sm ml-4">
+                <a href="mailto:ahmedzahid1149@gmail.com" className="text-sm ml-4">
                   <small className="block text-slate-900 dark:text-gray-200">Mail</small>
                   <span className="font-semibold text-blue-600 dark:text-blue-400">
                     ahmedzahid1149@gmail.com
@@ -52,10 +52,18 @@ export default function Contact() {
           <div className="mt-12">
             <h2 className="text-slate-900 dark:text-white text-base font-semibold">Socials</h2>
             <ul className="flex mt-4 space-x-4">
-              {/* Icons same rakhna */}
-              <FaFacebook/>
-              <FaLinkedin/>
-              <FaTwitter/>
+              <a href="https://github.com/ahmed22138" target="_blank" rel="noopener noreferrer" className="text-2xl hover:text-gray-600 transition">
+                <FaGithub/>
+              </a>
+              <a href="https://linkedin.com/in/ahmed-zahid" target="_blank" rel="noopener noreferrer" className="text-2xl hover:text-blue-600 transition">
+                <FaLinkedin/>
+              </a>
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-2xl hover:text-blue-500 transition">
+                <FaFacebook/>
+              </a>
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-2xl hover:text-sky-400 transition">
+                <FaTwitter/>
+              </a>
 
             </ul>
           </div>

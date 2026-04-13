@@ -29,8 +29,8 @@ const BlurNavbar = () => {
           <Link href="/" className="hover:text-blue-600 dark:hover:text-gray-300 transition">
             Home
           </Link>
-          <Link href="/faq" className="hover:text-blue-600 dark:hover:text-gray-300 transition">
-            Team
+          <Link href="/#projects" className="hover:text-blue-600 dark:hover:text-gray-300 transition">
+            Projects
           </Link>
           <Link href="/content-blog" className="hover:text-blue-600 dark:hover:text-gray-300 transition">
             Blog
@@ -46,7 +46,7 @@ const BlurNavbar = () => {
         {/* Right: Buttons */}
         <div className="hidden lg:flex items-center space-x-5 mr-14">
           <AnimatedThemeToggler className="text-blue-600 " />
-          <Link href="/chat"><RiRobot2Fill className="text-3xl  text-black dark:text-white"/></Link>
+          <Link href="/chat"><RiRobot2Fill className="text-3xl text-black dark:text-white"/></Link>
         </div>
 
         {/* Hamburger Menu (Mobile) */}
@@ -55,32 +55,12 @@ const BlurNavbar = () => {
           className="lg:hidden focus:outline-none"
         >
           {isOpen ? (
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth={2}
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M6 18L18 6M6 6l12 12"
-              />
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
             </svg>
           ) : (
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth={2}
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M4 6h16M4 12h16M4 18h16"
-              />
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
             </svg>
           )}
         </button>
@@ -90,23 +70,20 @@ const BlurNavbar = () => {
       {isOpen && (
         <div
           className="
-            lg:hidden backdrop-blur-lg 
+            lg:hidden backdrop-blur-lg
             bg-white/80 text-black
             dark:bg-black/80 dark:text-white
             flex flex-col items-center space-y-4 py-6 shadow-md transition-colors duration-500
           "
         >
           <Link href="/" className="hover:text-blue-600 dark:hover:text-gray-300 transition">Home</Link>
-          <Link href="/faq" className="hover:text-blue-600 dark:hover:text-gray-300 transition">Team</Link>
-          <Link href="/content-blog" className="hover:text-blue-600 dark:hover:text-gray-300 transition">
-            Blog
-          </Link>
+          <Link href="/#projects" className="hover:text-blue-600 dark:hover:text-gray-300 transition">Projects</Link>
+          <Link href="/content-blog" className="hover:text-blue-600 dark:hover:text-gray-300 transition">Blog</Link>
           <Link href="/about" className="hover:text-blue-600 dark:hover:text-gray-300 transition">About</Link>
           <Link href="/contact" className="hover:text-blue-600 dark:hover:text-gray-300 transition">Contact</Link>
           <div className="flex space-x-3 pt-4">
             <AnimatedThemeToggler/>
-             <a href="/chat"><RiRobot2Fill  className="mt-3 text-2xl"/></a>
-           
+            <a href="/chat"><RiRobot2Fill className="mt-3 text-2xl"/></a>
           </div>
         </div>
       )}
